@@ -17,8 +17,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Home Page
 Route::get('/', [PagesController::class, 'index']);
-Route::resource('/blog', PostsController::class)->middleware('auth');
+// -- Blogs Resources --
+Route::resource('/blog', PostsController::class);
+
 
 
 // -- User Authentication --

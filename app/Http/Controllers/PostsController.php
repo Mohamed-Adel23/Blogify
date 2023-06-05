@@ -2,24 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+    // Show All Posts
     public function index()
     {
-        return view('blogs.index');
+        $posts = Post::all();
+        return view('blogs.index')
+        ->with('posts', Post::orderBy('title', 'DESC')->get());
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    // Create New Post (GET)
     public function create()
     {
-        //
+        return view('blogs.create');
     }
 
     /**
