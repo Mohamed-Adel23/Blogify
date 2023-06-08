@@ -21,6 +21,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [PagesController::class, 'index']);
 // -- Blogs Resources --
 Route::resource('/blog', PostsController::class);
+Route::get('/blog/create', [PostsController::class, 'create'])->middleware('auth');
 
 
 

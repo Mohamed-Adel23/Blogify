@@ -14,7 +14,7 @@
     @foreach ($posts as $post)
         <div class="container sm:grid grid-cols-2 gap-20 mx-auto px-5 py-20 border-b border-gray-300">
             <div class="flex">
-                <img class="object-cover sm:rounded-lg" src="{{ $post->image }}" alt="">
+                <img class="object-cover sm:rounded-lg" src="{{ asset('posts_images/' . $post->image) }}" alt="">
             </div>
             <div>
                 <h2 class="text-4xl font-bold text-gray-700 py-5 md:pt-0">{{ $post->title }}</h2>
