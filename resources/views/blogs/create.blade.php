@@ -6,10 +6,21 @@
     </div>
 
     <div class="container m-auto pt-15 pb-5">
-        <form action="/blog">
-            <input type="text" name="title" placeholder="Title" class="w-full h-20 text-6xl rounded-lg shadow-lg border-b" style="padding: 50px; margin-bottom: 30px">
-            <textarea name="description" placeholder="Description" class="w-full h-60 text-l rounded-lg shadow-lg border-b" style="padding: 30px; margin-bottom: 30px"></textarea>
+        <form action="/blog" method="POST" enctype="multipart/form-data">
+            @csrf
+            <input type="text" name="title" placeholder="Title" class="w-full h-20 text-5xl rounded-lg shadow-lg border-b" style="padding: 50px; margin-bottom: 30px"
+                value="{{ old('title') }}"
+            >
+            {{-- Display Validation Errors --}}
+            @error('title')
+                <p class="text-red-500 text-xs mb-5">{{ $message }}</p>
+            @enderror
 
+            <textarea name="description" placeholder="Description" class="w-full h-60 text-l rounded-lg shadow-lg border-b" style="padding: 30px; margin-bottom: 30px">{{ old('description') }}</textarea>
+            {{-- Display Validation Errors --}}
+            @error('description')
+                <p class="text-red-500 text-xs mb-5">{{ $message }}</p>
+            @enderror
             <div class="flex items-center justify-center w-full mb-10">
                 <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-40 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-300 bg-gray-200 hover:bg-gray-100 border-gray-400 dark:hover:border-gray-500 hover:bg-gray-300 transition duration-300">
                     <div class="flex flex-col items-center justify-center pt-5 pb-6">
@@ -17,7 +28,10 @@
                         <p class="mb-2 text-sm text-gray-500 dark:text-gray-400"><span class="font-semibold">Click to upload</span> or drag and drop</p>
                         {{-- <p class="text-xs text-gray-500 dark:text-gray-400">SVG, PNG, JPG or GIF (MAX. 800x400px)</p> --}}
                     </div>
-                    <input id="dropzone-file" type="file" class="hidden" />
+                    <input id="dropzone-file" name="image" type="file" class="hidden" />
+                    @error('image')
+                        <p class="text-red-500 text-xs mb-5">{{ $message }}</p>
+                    @enderror
                 </label>
             </div>
 
