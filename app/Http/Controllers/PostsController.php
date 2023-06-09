@@ -51,35 +51,51 @@ class PostsController extends Controller
         return redirect('/blog')->with('message', 'Success! Post Created Successfully!');
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    // Show Single Post
+    public function show(string $slug)
     {
-        //
+        return view('blogs.show')->with('post', Post::where('slug', $slug)->first());
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
+    // Edit a Post (GET)
+    public function edit(string $slug)
     {
-        //
+        return view('blogs.edit')->with('post', Post::where('slug', $slug)->first());
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
+    // Update a Post (POST)
+    public function update(Request $request, string $slug)
     {
-        //
+        // Some Validation
+        $fieldsValidate = $request->validate([
+            'title' => ['required', 'min:3'],
+            'description' => ['required', 'min:10'],
+            'image' => ['mimes:jpg,png,jpeg', 'max:5048']
+        ]);
+
+        // Add The Slug To The Current Post
+        $newSlug = Str::slug($fieldsValidate['title'], '-');
+        $fieldsValidate['slug'] = $newSlug;
+
+        // Check if the user choose a new image
+        if($request->hasFile('image')) {
+            // Make A Unique Name For Each Image and Store it
+            $newImageName = uniqid() . '-' . $newSlug . '.' . $request->image->extension();
+            $request->image->move(public_path('posts_images'), $newImageName);
+            $fieldsValidate['image'] = $newImageName;
+        }
+
+        // Update Data
+        Post::where('slug', $slug)->update($fieldsValidate);
+
+        // Redirection
+        return redirect('/blog/' . $newSlug)->with('message', 'Success! Post Updated Successfully!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
+    // Delete The Post
+    public function destroy(string $slug)
     {
-        //
+        Post::where('slug', $slug)->delete();
+        return redirect('/blog')->with('message', 'Success! Post Deleted Successfully!');
     }
 }
