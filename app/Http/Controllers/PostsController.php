@@ -13,7 +13,7 @@ class PostsController extends Controller
     {
         $posts = Post::all();
         return view('blogs.index')
-        ->with('posts', Post::orderBy('created_at', 'DESC')->get());
+        ->with('posts', Post::orderBy('created_at', 'DESC')->simplePaginate(3));
     }
 
     // Create New Post (GET)
@@ -96,6 +96,6 @@ class PostsController extends Controller
     public function destroy(string $slug)
     {
         Post::where('slug', $slug)->delete();
-        return redirect('/blog')->with('message', 'Success! Post Deleted Successfully!');
+        return redirect('/blog')->with('delete', 'Success! Post Deleted Successfully!');
     }
 }

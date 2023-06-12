@@ -63,7 +63,7 @@ class UsersController extends Controller
         // Auth The User
         if(auth()->attempt($fieldsValidate)) {
             $request->session()->regenerate();
-            return redirect('/')->with('message', 'Welcome Back!');
+            return redirect('/')->with('message', 'Welcome Back! ' . auth()->user()->name);
         }
 
         // If The User Not Found

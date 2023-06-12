@@ -51,7 +51,7 @@
                 font-bold uppercase
                 transition duration-300
             ">
-                Update The Post
+            <i class="fa-solid fa-pen-to-square"></i>&nbsp; Update The Post
             </button>
         </form>
     </div>

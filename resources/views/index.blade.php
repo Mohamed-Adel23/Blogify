@@ -2,7 +2,10 @@
 
 <x-layout>
     {{-- HERO Section --}}
-    @include('partials._hero');
+    @include('partials._hero')
+
+    {{-- Search Bar --}}
+    @include('partials._search')
 
     {{-- A Blog --}}
     <div class="container sm:grid grid-cols-2 gap-10 mx-auto mt-20">

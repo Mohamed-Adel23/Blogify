@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blogify</title>
+
     {{-- Google Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +13,15 @@
     {{-- Website Icon --}}
     <link rel="icon" href="{{ asset('images/favicon.ico') }}">
     {{-- Font Awesome --}}
-    <link rel="stylesheet" href="resources/css/all.min.css">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+    />
+    {{-- Alpinejs Script --}}
+    <script src="//unpkg.com/alpinejs" defer></script>
     {{-- Tailwindcss --}}
     @vite('resources/css/app.css')
 </head>
@@ -26,19 +35,22 @@
                 </a>
                 <div class="flex items-center justify-between lg:order-2">
                     @auth
-                        <a class="bg-gray-800 text-gray-100 hover:text-orange-100 rounded-lg py-3 px-5 transition duration-300" href="/blog">Blogs</a>
+                        <a class="bg-gray-800 text-gray-100 hover:text-orange-100 rounded-lg py-3 px-5 transition duration-300" href="/blog"><i class="fa-solid fa-book-open-reader"></i>&nbsp; Blogs</a>
                         <form action="/logout" method="POST">
                             @csrf
-                            <button type="submit" class="text-gray-300 rounded-lg py-3 px-3 mx-3 hover:text-red-400 transition duration-300">Log out</button>
+                            <button type="submit" class="text-gray-300 rounded-lg py-3 px-3 mx-3 hover:text-red-400 transition duration-300">Log out &nbsp;<i class="fa-solid fa-arrow-right-from-bracket"></i></button>
                         </form>
                         @else
-                        <a href="/login" class="text-gray-100 rounded-lg py-3 px-3 mx-3 font-bold hover:bg-gray-100 hover:text-gray-700 transition duration-300">Log in</a>
-                        <a href="/register" class="bg-yellow-500 text-gray-700 rounded-lg py-3 px-5 font-bold hover:bg-yellow-400 hover:text-gray-700 transition duration-300">Get Started</a>
+                        <a href="/register" class="bg-yellow-500 text-gray-700 rounded-lg py-3 px-5 font-bold hover:bg-yellow-400 hover:text-gray-700 transition duration-300"><i class="fa-solid fa-user-plus"></i>&nbsp; Sign Up</a>
+                        <a href="/login" class="text-gray-100 rounded-lg py-3 px-3 mx-3 font-bold hover:bg-gray-100 hover:text-gray-700 transition duration-300">Log in &nbsp;<i class="fa-solid fa-arrow-right-to-bracket"></i></a>
                     @endauth
                 </div>
             </div>
         </nav>
     </header>
+
+    {{-- Display Flash Message --}}
+    <x-flash-message />
 
     <main>
         {{ $slot }}

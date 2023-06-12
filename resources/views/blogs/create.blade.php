@@ -39,11 +39,11 @@
                 bg-green-700 hover:bg-green-600
                 text-gray-200
                 cursor-pointer
-                py-5 px-10 rounded-lg
+                py-5 px-8 rounded-lg
                 font-bold uppercase
                 transition duration-300
             ">
-                Add The Post
+            <i class="fa-solid fa-circle-plus"></i>&nbsp; Add The Post
             </button>
         </form>
     </div>
