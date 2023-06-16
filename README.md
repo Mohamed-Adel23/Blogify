@@ -28,16 +28,16 @@ Welcome to Blogify, the ultimate platform for reading and creating blogs and pos
 - [Mohamed Adel Elsayed](https://github.com/Mohamed-Adel23)
 
 ## ScreenShots From The Website
-![1](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/db3ec1fc-2db1-4777-a610-36cbb6492b72)
-![2](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/0772b912-e32a-4611-b98a-ec9850b09b8b)
-![3](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/133cb461-ea74-441c-a1a6-04ca9829c35a)
-![4](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/10aa9050-0c4c-449c-9dd6-3c0de8382149)
-![5](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/3d039752-5652-4599-ae60-2a93956aeb4d)
-![7](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/0a16dc1f-0c18-4930-9082-4367ab0239ac)
-![8](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/1390f5a0-69dc-4ee1-b30e-9d7e34889f0a)
-![10](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/77a3940e-55cd-4e91-9cf9-044a24f9e1bf)
-![11](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/c0b0f00b-c6f0-4c8e-b16f-b126c71d1e5c)
-![9](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/61bd73cc-c178-43c2-a7eb-7482dd5dd709)
-![13](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/142c6deb-e67d-48ab-b754-7544bcdd58d0)
-![14](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/6b9bf9c7-7d64-4aa8-967e-61f55ee9b31c)
+![1](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/063c9442-3275-4f30-9258-c5496bee9361)
+![2](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/5dbadf66-0e43-4fc3-b3cd-43566b5c7a12)
+![3](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/61251c94-3a97-4926-83b1-3c895ab03f8a)
+![4](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/2f966af8-d087-4172-893f-34db397aa335)
+![7](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/d9ba86a7-0b64-4f7b-aafe-52cb992b0c34)
+![8](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/b43d117c-37bf-4fbe-97cf-ff8b57448577)
+![10](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/8e095957-32a2-41f1-a0b3-87b4a87c6a74)
+![9](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/19bc2e51-76a1-44ce-aeb3-d3e6e0c9407c)
+![11](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/058e4ba6-38bf-47fa-932f-76beabd84209)
+![13](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/a97ce3b7-ccba-4bb8-bda6-b69a22139f97)
+![14](https://github.com/Mohamed-Adel23/Blogify/assets/119868046/d1d20222-1f79-4510-a506-5bb275df4eee)
+
 
