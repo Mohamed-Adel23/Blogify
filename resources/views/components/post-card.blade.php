@@ -18,7 +18,7 @@
                 @endphp
                 {{ $desc }}...
             </p>
-            <a href="/blog/{{ $post->slug }}" class="bg-gray-800 text-gray-100 py-3 px-4 uppercase font-bold rounded-lg place-self-start hover:bg-gray-700 trasition duration-300">Read More &nbsp;<i class="fa-solid fa-circle-info"></i></a>
+            <a href="/blog/{{ $post->slug }}" class="bg-gray-700 text-gray-100 py-3 px-4 uppercase text-sm font-bold rounded-lg place-self-start hover:bg-gray-800 trasition duration-300">Read More &nbsp;<i class="fa-solid fa-circle-info"></i></a>
         </span>
     </div>
 </div>

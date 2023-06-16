@@ -11,9 +11,8 @@ class PostsController extends Controller
     // Show All Posts
     public function index()
     {
-        $posts = Post::all();
         return view('blogs.index')
-        ->with('posts', Post::orderBy('created_at', 'DESC')->simplePaginate(3));
+        ->with('posts', Post::orderBy('created_at', 'DESC')->filter(request(['tag', 'search']))->simplePaginate(3));
     }
 
     // Create New Post (GET)
@@ -28,6 +27,7 @@ class PostsController extends Controller
         // Some Validation
         $fieldsValidate = $request->validate([
             'title' => ['required', 'min:3'],
+            'tags' => ['required', 'min:3'],
             'description' => ['required', 'min:10'],
             'image' => ['required', 'mimes:jpg,png,jpeg', 'max:5048']
         ]);
@@ -43,6 +43,10 @@ class PostsController extends Controller
 
         // Add The Owner of The Post
         $fieldsValidate['user_id'] = auth()->user()->id;
+
+        // echo '<pre>';
+        // dd(var_dump($fieldsValidate));
+        // echo '</pre>';
 
         // Store Data
         Post::create($fieldsValidate);
@@ -60,7 +64,12 @@ class PostsController extends Controller
     // Edit a Post (GET)
     public function edit(string $slug)
     {
-        return view('blogs.edit')->with('post', Post::where('slug', $slug)->first());
+        $postData = Post::where('slug', $slug)->first();
+        // Only Current user posts can reach to them
+        if(auth()->user()->id !== $postData['user_id']) {
+            return redirect('/notfound');
+        }
+        return view('blogs.edit')->with('post', $postData);
     }
 
     // Update a Post (POST)
@@ -69,6 +78,7 @@ class PostsController extends Controller
         // Some Validation
         $fieldsValidate = $request->validate([
             'title' => ['required', 'min:3'],
+            'tags' => ['required', 'min:3'],
             'description' => ['required', 'min:10'],
             'image' => ['mimes:jpg,png,jpeg', 'max:5048']
         ]);

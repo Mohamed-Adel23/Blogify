@@ -32,7 +32,7 @@ class UsersController extends Controller
         // Login Directly into Home Page
         auth()->login($user);
 
-        return redirect('/')->with('message', 'Congratulations! Your accout has been created');
+        return redirect('/')->with('message', 'Congratulations, ' . auth()->user()->name . ' Your account successfully created');
     }
 
     // Log User Out

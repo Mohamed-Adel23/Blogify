@@ -16,11 +16,20 @@
                 <p class="text-red-500 text-xs mb-5">{{ $message }}</p>
             @enderror
 
+            <input type="text" name="tags" placeholder="put tags seperated with comma..." class="w-full h-20 text-l rounded-lg shadow-lg border-b text-gray-600" style="padding: 50px; margin-bottom: 30px"
+                value="{{ old('tags') }}"
+            >
+            {{-- Display Validation Errors --}}
+            @error('tags')
+                <p class="text-red-500 text-xs mb-5">{{ $message }}</p>
+            @enderror
+
             <textarea name="description" placeholder="Description" class="w-full h-60 text-l rounded-lg shadow-lg border-b text-gray-600 leading-6" style="padding: 30px; margin-bottom: 30px">{{ old('description') }}</textarea>
             {{-- Display Validation Errors --}}
             @error('description')
                 <p class="text-red-500 text-xs mb-5">{{ $message }}</p>
             @enderror
+
             <div class="flex items-center justify-center w-full mb-10">
                 <label for="dropzone-file" class="flex flex-col items-center justify-center w-full h-40 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 hover:bg-gray-300 bg-gray-200 hover:bg-gray-100 border-gray-400 dark:hover:border-gray-500 hover:bg-gray-300 transition duration-300">
                     <div class="flex flex-col items-center justify-center pt-5 pb-6">
@@ -35,7 +44,7 @@
                 </label>
             </div>
 
-            <button type="submit" class="
+            <button type="submit" class=" btn
                 bg-green-700 hover:bg-green-600
                 text-gray-200
                 cursor-pointer

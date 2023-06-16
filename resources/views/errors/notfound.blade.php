@@ -1,3 +1,5 @@
+{{-- بسم الله الرحمن الرحيم --}}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,12 +52,12 @@
         </nav>
     </header>
 
-    {{-- Display Flash Message --}}
-    <x-flash-message />
-
-    <main>
-        {{ $slot }}
-    </main>
+    <div class="container mx-auto flex justify-center mt-10">
+        <img src="{{ asset('images/4042.png') }}" alt="">
+    </div>
+    <div class="container mx-auto flex justify-center mt-10">
+        <a href="/" class="bg-gray-800 text-gray-100 py-3 px-4 uppercase font-bold rounded-lg place-self-start hover:bg-gray-700 trasition duration-300">Back To Home</a>
+    </div>
 
     <footer>
         <div class="bg-gray-700 py-10 mt-20 foot1">
@@ -102,3 +104,5 @@
     </footer>
 </body>
 </html>
+
+
