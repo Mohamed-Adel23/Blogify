@@ -8,13 +8,13 @@ Welcome to Blogify, the ultimate platform for reading and creating blogs and pos
 
 ## Technologies
 - Front-End
-  -- HTML
-  -- CSS
-  -- Tailwind CSS
+  - HTML
+  - CSS
+  - Tailwind CSS
 - Back-End 
-  -- Laravel (10.x)
-  -- PHP (8.2)
-  -- MySQL
+  - Laravel (10.x)
+  - PHP (8.2)
+  - MySQL
 
 ## Features
 - [x] Authentication & Authorization Processes which make the website more secure and powerful.
