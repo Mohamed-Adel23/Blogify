@@ -12,16 +12,16 @@
     {{-- Search Bar --}}
     @include('partials._search')
 
-@if ($posts[0] ?? false)
-    @foreach ($posts as $post)
+    @if ($posts[0] ?? false)
+        @foreach ($posts as $post)
 
-        {{-- Binding Data To post-card Page --}}
-        <x-post-card :post="$post" />
+            {{-- Binding Data To post-card Page --}}
+            <x-post-card :post="$post" />
 
-    @endforeach
-@else
-    @include('errors.no-data')
-@endif
+        @endforeach
+    @else
+        @include('errors.no-data')
+    @endif
 
     {{-- Display Pagination --}}
     <div class="m-6 p-4">

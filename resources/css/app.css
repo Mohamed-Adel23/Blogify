@@ -30,3 +30,43 @@ body {
         max-width: 1024px;
     }
 }
+@media (max-width: 600px) {
+    .foot1 {
+        display: none;
+    }
+    .foot2 .image {
+        display: none;
+    }
+    .foot2 {
+        line-height: 1.4;
+        margin-top: 60px;
+        padding: 20px;
+        text-align: center;
+    }
+    .cat {
+        font-size: 10px;
+        padding: 0;
+        margin-right: 5px;
+        background-color: transparent;
+    }
+    .catt {
+        color: white;
+        padding: 5px;
+    }
+}
+@media (max-width: 640px) {
+    .desc,
+    .edit,
+    .btn {
+        margin: 0 20px;
+    }
+    .tex1,
+    .tex2 {
+        font-size: 15px;
+        margin: 0 10px;
+    }
+    .tex1 i,
+    .tex2 i {
+        display: none;
+    }
+}

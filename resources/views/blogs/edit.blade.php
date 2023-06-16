@@ -18,6 +18,14 @@
                 <p class="text-red-500 text-xs mb-5">{{ $message }}</p>
             @enderror
 
+            <input type="text" name="tags" placeholder="put tags seperated with comma..." class="w-full h-20 text-l rounded-lg shadow-lg border-b text-gray-600" style="padding: 50px; margin-bottom: 30px"
+                value="{{ $post->tags }}"
+            >
+            {{-- Display Validation Errors --}}
+            @error('tags')
+                <p class="text-red-500 text-xs mb-5">{{ $message }}</p>
+            @enderror
+
             <textarea name="description" placeholder="Description" class="w-full h-60 text-l text-gray-600 leading-6 rounded-lg shadow-lg border-b" style="padding: 30px; margin-bottom: 30px">{{ $post->description }}</textarea>
             {{-- Display Validation Errors --}}
             @error('description')
@@ -43,7 +51,7 @@
                 </label>
             </div>
 
-            <button type="submit" class="
+            <button type="submit" class=" btn
                 bg-green-700 hover:bg-green-600
                 text-gray-200
                 cursor-pointer

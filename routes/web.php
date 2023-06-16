@@ -19,12 +19,18 @@ use Illuminate\Support\Facades\Route;
 
 // Home Page
 Route::get('/', [PagesController::class, 'index']);
+// Manage Users' Blogs
+Route::get('/manage', [PagesController::class, 'manage'])->middleware('auth');
+// Not Found Page (404) which will display when the user attempt to reach unauth page
+Route::get('/notfound', [PagesController::class, 'notfound'])->name('notfound');
+
 // -- Blogs Resources --
+// Edit Page with authorization
+Route::get('/blog/{slug}/edit', [PostsController::class, 'edit'])->middleware('auth');
+// Blog Resources
 Route::resource('/blog', PostsController::class);
+// Create Page with authorization
 Route::get('/blog/create', [PostsController::class, 'create'])->middleware('auth');
-// Route::get('/blog/{slug}', [PostsController::class, 'show'])->middleware('auth');
-
-
 
 // -- User Authentication --
 // Create New User (GET)
@@ -34,6 +40,6 @@ Route::post('/users', [UsersController::class, 'store']);
 // Log User Out
 Route::post('/logout', [UsersController::class, 'logout']);
 // Log User In (GET)
-Route::get('/login', [UsersController::class, 'login'])->name('login')->middleware('guest');
+Route::get('/login', [UsersController::class, 'login'])->middleware('guest');
 // Auth User (POST)
 Route::post('/user', [UsersController::class, 'authenticate']);
